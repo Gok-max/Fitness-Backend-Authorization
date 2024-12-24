@@ -1,6 +1,6 @@
 import express from "express";
 import trainerController from "../controller/trainerController.js";
-import verifyAuth from "../middleware/verifyAuth.js";
+import verifyAuth from "../middleware/verifyAuth";
 const router = express.Router();
 
 router.put(
