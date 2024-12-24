@@ -1,6 +1,6 @@
 import express from "express";
 import adminController from "../controller/adminController.js";
-import verifyAuth from "../middleware/verifyAuth.js";
+import verifyAuth from "../middleware/verifyAuth";
 import verifyAdmin from "../middleware/verifyAdmin.js";
 const router = express.Router();
 
