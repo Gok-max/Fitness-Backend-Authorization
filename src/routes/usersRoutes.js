@@ -1,7 +1,7 @@
 import express from "express";
 import authController from "../controller/authController.js";
 import userController from "../controller/userController.js";
-import verifyAuth from "../middleware/verifyAuth";
+import verifyAuth from "../middleware/verifyAuth.js";
 const router = express.Router();
 
 // Authentication Routes
