@@ -13,7 +13,10 @@ const app = express();
 //   //   credentials: true, // Allow cookies to be sent with cross-origin requests
 // };
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173', // Replace with your frontend's URL
+  credentials: true, // If using cookies or authorization headers
+}));
 app.use(express.json({ limit: "5mb" }));
 
 app.use(AppRoutes);
