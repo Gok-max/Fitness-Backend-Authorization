@@ -9,7 +9,6 @@ import { sendEmail } from "../service/emailService.js";
 const getUserInfoById = async (req, res) => {
   try {
     const userId = req.user.id;
-    // console.log("User ID from token:", userId);
 
     const user = await User.findOne({ id: userId });
     if (!user) {
@@ -82,6 +81,7 @@ const bookClass = async (req, res) => {
       userId: req.user.id,
       bookingStatus: "confirmed",
     });
+    
     if (existingBooking) {
       return res
         .status(400)
@@ -112,7 +112,7 @@ const bookClass = async (req, res) => {
     // Increment the booked count and add user to attendees in the Class model
     await Class.updateOne(
       { classId },
-      { $inc: { bookedCount: 1 }, $push: { attendees: req.user.id } }
+      { $inc: { bookedCount: 1 }, $push: { attendees: userId } }
     );
 
     // Push classId to the user's bookings array
