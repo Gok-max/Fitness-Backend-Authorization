@@ -5,16 +5,8 @@ import AppRoutes from "./routes/index.js";
 
 const app = express();
 
-// const corsOptions = {
-//   origin:
-//     "https://online-personalized-fitness-class-booking-platform-fit-pro.vercel.app", // Remove trailing slash
-//   methods: ["GET", "POST", "PUT", "DELETE"],
-//   allowedHeaders: ["Content-Type", "Authorization"],
-//   //   credentials: true, // Allow cookies to be sent with cross-origin requests
-// };
-
 app.use(cors({
-  origin: 'http://localhost:5173', // Replace with your frontend's URL
+  // origin: 'http://localhost:5173', // Replace with your frontend's URL
   credentials: true, // If using cookies or authorization headers
 }));
 app.use(express.json({ limit: "5mb" }));
