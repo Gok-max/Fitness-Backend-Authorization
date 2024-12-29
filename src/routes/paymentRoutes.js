@@ -3,6 +3,6 @@ const router = express.Router();
 import paymentController from "../controller/paymentController.js";
 
 router.post("/create-payment/:classId", paymentController.createPayment);
-router.post("/payment-success", paymentController.paymentAndBookingSuccess);
+router.post("/payment-success/:classId", paymentController.paymentAndBookingSuccess);
 
 export default router;
